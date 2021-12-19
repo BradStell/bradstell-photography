@@ -1,0 +1,20 @@
+extends ../partials/home-layout
+
+block variables
+	- const currentPage = "home"
+
+block content
+	div.home-image-and-menu-container
+		img.home-image(src="images/_ASH1170-Edit.jpeg")
+		include /partials/menu-button
+	div.name-container
+		h1.title-name Brad Stell
+		div.title-content-container
+			p.title-content Photography that blah blah blah and does a lot of stuff to draw people in.
+		div.view-all-link-wrapper
+			a.view-all-photos(href="set-001.html") VIEW ALL PHOTOS
+			div.view-all-photos-line
+	div.image-slider-container
+		img.slider-image(src="images/_ASH1226.jpeg")
+		img.slider-image(src="images/_ASH1253-Edit.jpeg")
+	include /partials/footer

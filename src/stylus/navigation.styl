@@ -1,0 +1,34 @@
+div.navigation-wrapper
+  position sticky
+  top 0
+  background-color $color.white
+  width 520px
+  display flex
+  flex-direction column
+
+  a.nav-item
+    cursor pointer
+    height 81px
+    display flex
+    justify-content flex-start
+    padding-left 80px
+    align-items center
+    border-top solid $color.black 0.5px
+    border-bottom solid $color.black 0.5px
+
+    &:first-child
+      border-top solid $color.black 1px
+
+    &:last-child
+        border-bottom solid $color.black 1px
+
+    span
+      font-weight normal
+      font-size 20px
+      line-height 33px
+      color $color.black
+
+    &.viewing
+      span
+        font-weight 800
+

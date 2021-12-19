@@ -1,0 +1,20 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 001'
+	- const currentPage = "photography"
+
+block content
+	div.grid.horizontal
+		+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+		+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+		+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+		+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+		+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+		+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+		+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')

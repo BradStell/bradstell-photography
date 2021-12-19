@@ -1,0 +1,23 @@
+{
+  "name": "jamesbradley-photography",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build-stylus && npm run build-pug && npm run build-ts",
+    "build-stylus": "stylus src/stylus/main.styl -o public/styles/jamesbradley.css",
+    "watch-stylus": "stylus -w src/stylus/main.styl -o public/styles/jamesbradley.css",
+    "build-pug": "pug --obj global.json --out public/ src/pug/pages/*.pug",
+    "watch-pug": "pug --obj global.json --out public/ src/pug/pages/*.pug --watch",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.55.0"
+  }
+}

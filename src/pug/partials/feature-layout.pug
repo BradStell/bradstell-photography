@@ -1,0 +1,44 @@
+block variables
+include /partials/mixins
+
+doctype html
+html(lang="en-US")
+  head
+    title= `James Bradley Photography`
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2.0")
+    meta(http-equiv="content-language" content="en")
+    link(rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png")
+    link(rel="manifest" href="./site.webmanifest")
+    style
+      include ../../../public/styles/jamesbradley.css
+  body
+    div.main-container-wrapper
+      div.main-container
+        div.content
+          div.header-container
+            div.image-container
+              img.slider-image(src="images/_ASH1224.jpeg")
+              img.slider-image(src="images/_ASH1310-Edit-Edit.jpeg")
+            include /partials/menu-button
+
+          div.featured-info-section
+            h1.feature-title Water
+            div.feature-content-wrapper
+              p This is some really long explanation on water, and it's effects on the soul, and the environment. and how being water concience is going to be a future neccesity, unless we can get the weather back on track.
+
+          include /partials/scroll-by-text
+
+          div.spacer
+
+          div.side-menu
+            +set_nav()
+
+          div.feature-container
+            block content
+
+          include /partials/footer
+
+    script(src="js/index.js" defer)

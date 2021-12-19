@@ -1,0 +1,22 @@
+mixin set_nav(activeSet)
+	-
+		const sets = [
+			{ name: 'No. 001', link: 'set-001.html' },
+			{ name: 'No. 002', link: 'set-002.html' },
+			{ name: 'No. 003', link: 'set-003.html' },
+			{ name: 'No. 004', link: 'set-004.html' }
+		]
+
+	div.navigation-wrapper
+		each set in sets
+			a.nav-item(href= link class= activeSet === set.name ? 'viewing' : '')
+				span= set.name
+
+mixin image_container(path, title, location)
+	div.image-container
+		img(
+			src= `images/${path}`
+		)
+		div.content-wrapper
+			p.image-title= title
+			p.location= location
