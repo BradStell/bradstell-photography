@@ -19,14 +19,10 @@ div.menu-container
       color #FFFFFF
       font-size 24px
 
-      // &:hover
-      //   text-shadow: 0 0 5px #ffffff
-
-    // &:hover
-    //   animation jiggle 0.3s
-  &:hover
-    span
-      // text-shadow: 0 0 5px #ffffff
+  // // text glow
+  // &:hover
+  //   span
+  //     text-shadow: 0 0 5px #ffffff
 
   div.menu-options-container
     position absolute
@@ -41,6 +37,7 @@ div.menu-container
     div.content
       position relative
       opacity 0
+      // display none
       transition opacity 0.5s
       width 100%
       height 100%
@@ -48,6 +45,7 @@ div.menu-container
       div.menu-items
         opacity 0
         transition opacity 0.3s 1s
+        // display none
         display flex
         flex-direction column
         padding-top 164px
@@ -57,6 +55,9 @@ div.menu-container
           display flex
           flex-direction row
           width 520px
+
+          &:first-child
+            margin-right 20px
 
           &:hover
             span
@@ -74,9 +75,30 @@ div.menu-container
             opacity 0.2
             transition opacity 0.3s
 
+        div.menu-item
+          align-items center
+
+          svg.chevron
+            opacity 0.2
+
+          span
+            margin-right 32px
+
+          &:first-child
+            margin-right 20px
+
         div.featured-container
           display flex
           flex-direction column
+          opacity 0
+          visibility hidden
+          transition opacity 1s, visibility 1s
+          // display none
+
+          &.expanded
+            // display flex
+            opacity 1
+            visibility visible
 
           a.sub-menu-item
             font-weight 800
@@ -85,6 +107,7 @@ div.menu-container
             letter-spacing 0.2em
             color white
             text-transform uppercase
+            width 400px
 
       svg.close
         opacity 0
@@ -106,9 +129,11 @@ div.menu-container
 
       div.content
         opacity 1
+        // display block
 
         div.menu-items
           opacity 1
+          // display flex
 
         svg
           opacity 1

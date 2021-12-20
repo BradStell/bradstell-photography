@@ -54,3 +54,28 @@ const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapper
   const navItem = document.getElementById(`${setWrapperDivID}-nav-item`)
   navItem?.classList.add('viewing')
 }
+
+const onFeatureMenuItemClicked = (event: MouseEvent) => {
+  const menuFeatureContainer = document.getElementById("menu-feature-container")
+  const possibleCloseIcons = document.getElementsByClassName('chevron')
+  const closeIcon: Maybe<HTMLElement> = possibleCloseIcons.length === 1
+    ? possibleCloseIcons.item(0) as HTMLElement
+    : null
+
+  if (menuFeatureContainer?.classList.contains("expanded")) {
+    // collapse it
+    menuFeatureContainer?.classList.remove("expanded")
+    if (closeIcon) {
+      closeIcon.style.transform       = 'rotate(0deg)'; 
+      closeIcon.style.opacity = '0.2'
+    }
+  } else {
+    // expand it
+    menuFeatureContainer?.classList.add("expanded")
+    
+    if (closeIcon) {
+      closeIcon.style.transform       = 'rotate(+180deg)'; 
+      closeIcon.style.opacity = '1'
+    }
+  }
+}

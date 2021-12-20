@@ -12,10 +12,13 @@ div.menu-container(onclick='showHideMenu(event)')
 					span Home
 				a.menu-item(class= `${currentPage === 'photography' ? 'viewing' : ''}` href="set-001.html")
 					span Photography
-				div.menu-item(class= `${currentPage === 'featured' ? 'viewing' : ''}`)
+				div.menu-item(
+					class= `${currentPage === 'featured' ? 'viewing' : ''}`
+					onclick="onFeatureMenuItemClicked(event)"
+				)
 					span Featured
 					include ./chevron
-				div.featured-container
+				div.featured-container(id="menu-feature-container")
 					a.sub-menu-item(href="water.html") water
 					a.sub-menu-item death valley
 					a.sub-menu-item yosemte
