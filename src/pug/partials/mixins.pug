@@ -11,11 +11,22 @@ mixin set_nav(activeSet)
 		each set in sets
 			a.nav-item(href= link class= activeSet === set.name ? 'viewing' : '')
 				span= set.name
+				span.selected-bar
+
+mixin feature_nav(sets, pageID)
+	div.navigation-wrapper
+		each set in sets
+			div.nav-item(onclick= `changeFeaturePageSet(event, '${pageID}', '${set.id}')`)
+				span= set.name
 
 mixin image_container(path, title, location)
 	div.image-container
 		img(
 			src= `images/${path}`
+			alt= path
+			loading="lazy"
+			id= path
+			onload=`onImageLoad('${path}')`
 		)
 		div.content-wrapper
 			p.image-title= title

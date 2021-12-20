@@ -3,6 +3,7 @@ div.menu-container
   top 40px
   right 40px
   cursor pointer
+  z-index 100
 
   div.menu-button
     display flex
@@ -12,17 +13,28 @@ div.menu-container
     width 344px
     height 80px
     background-color $color.black
-    color #FFFFFF
     border-radius 100px
-    font-size 24px
+
+    span
+      color #FFFFFF
+      font-size 24px
+
+      // &:hover
+      //   text-shadow: 0 0 5px #ffffff
+
+    // &:hover
+    //   animation jiggle 0.3s
+  &:hover
+    span
+      // text-shadow: 0 0 5px #ffffff
 
   div.menu-options-container
     position absolute
     top 0px
     right 16px
-    transition width 1s, height 1s, right 0.5s 0.2s, top 0.5s 0.2s, border-radius 1s 0.2s
-    width 132px
-    height 45px
+    transition width 1s, height 1s, right 0.5s 0.2s, top 0.5s 0.2s, border-radius 1s 0.2s, opacity 0.2s
+    width 220px
+    height 80px
     background-color $color.black
     border-radius 100px
 
@@ -50,6 +62,10 @@ div.menu-container
             span
               opacity 1
 
+          &.viewing
+            span
+              opacity 1
+
           span
             font-weight 800
             font-size 80px
@@ -57,9 +73,6 @@ div.menu-container
             color white
             opacity 0.2
             transition opacity 0.3s
-
-            &.viewing
-              opacity 1
 
         div.featured-container
           display flex
@@ -75,7 +88,7 @@ div.menu-container
 
       svg.close
         opacity 0
-        transition opacity 0.3s
+        transition opacity 0.3s 1s
         position absolute
         top 64px
         right 64px
@@ -84,7 +97,6 @@ div.menu-container
           stroke $color.white
 
     &.viewing
-      opacity 1
       right 0px
       width 100vw
       height 100vh
@@ -100,3 +112,13 @@ div.menu-container
 
         svg
           opacity 1
+
+@keyframes jiggle
+  from
+    transform rotate(0deg)
+  25%
+    transform rotate(-5deg)
+  50%
+    transform rotate(3deg)
+  to
+    transform rotate(0deg)

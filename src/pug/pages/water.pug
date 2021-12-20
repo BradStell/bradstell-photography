@@ -1,16 +1,63 @@
 extends ../partials/feature-layout
 
+block variables
+	-
+		const pageID = 'water-feature-content'
+		const featureData = [
+			{ name: 'Water No. 01', id: 'water-01' },
+			{ name: 'Water No. 02', id: 'water-02' },
+			{ name: 'Water No. 03', id: 'water-03' }
+		]
+
 block content
-	div.grid.horizontal
-		+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
-		+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
-		+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
-		+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
+	div.feature-content(id= pageID)
+		div.side-menu
+			+feature_nav(featureData, pageID)
 
-	div.divider
+		//- Water No. 01
+		div.feature-container(id= `${featureData[0].id}` class="viewing")
+			div.grid.horizontal
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+				+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+				+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
 
-	div.grid.horizontal
-		+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
-		+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
-		+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
-		+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
+			div.divider
+
+			div.grid.horizontal
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+				+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+				+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
+
+		//- Water No. 02
+		div.feature-container(id= `${featureData[1].id}`)
+			div.grid.horizontal
+				+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+				+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+
+			div.divider
+
+			div.grid.horizontal
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+				+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+				+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
+
+		//- Water No. 03
+		div.feature-container(id= `${featureData[2].id}`)
+			div.grid.horizontal
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+				+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+				+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')
+
+			div.divider
+
+			div.grid.horizontal
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.01', 'Sierras, CA')
+				+image_container('_ASH1184.jpeg', 'No. 001.02', 'Sierras, CA')
+				+image_container('_ASH1185.jpeg', 'No. 001.03', 'Sierras, CA')
+				+image_container('_ASH1170-Edit.jpeg', 'No. 001.04', 'Sierras, CA')

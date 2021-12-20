@@ -1,7 +1,4 @@
 div.main-container-wrapper
-  background-color $color.white
-  width 100vw
-
   div.main-container
     div.content
       position relative
@@ -44,13 +41,17 @@ div.main-container-wrapper
         height 277px
         width 100%
 
-      div.feature-container
-        width 70%
+      div.feature-content
+        display flex
+        flex-direction row-reverse
 
-      div.side-menu
-        position absolute
-        right 0
-        width 29%
-        height 300px
-        background-color red
-        margin-left 17.92px
+        div.feature-container
+          display none
+          transition display 0.5s
+
+          &.viewing
+            display block
+
+        div.side-menu
+          div.navigation-wrapper
+            padding-left 17.92px

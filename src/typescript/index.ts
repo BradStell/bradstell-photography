@@ -11,10 +11,32 @@ const showHideMenu = (event: MouseEvent) => {
 }
 
 const onMenuClose = (event: MouseEvent) => {
+  console.log('closing menu')
   event.preventDefault()
   event.stopPropagation()
 
   const menuHandle = findElemBy('menu-content-handle')
   menuHandle?.classList.remove('viewing')
   document.body.classList.remove('no-scroll')
+}
+
+const onImageLoad = (path: string) => {
+  console.log(`Loaded image ${path}`)
+}
+
+const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapperDivID: string) => {
+  const viewingClass = 'viewing'
+
+  // unset viewing on all that have it
+  const featureCs = document.getElementsByClassName('feature-container')
+  for (let i = 0; i < featureCs.length; i++) {
+    const item = featureCs.item(i)
+    if (item !== null) {
+      item.classList.remove(viewingClass)
+    }
+  }
+
+  // set viewing on currently selected element group
+  const currentEl = document.getElementById(setWrapperDivID)
+  currentEl?.classList.add(viewingClass)
 }

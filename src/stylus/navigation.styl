@@ -6,21 +6,35 @@ div.navigation-wrapper
   display flex
   flex-direction column
 
-  a.nav-item
+  .nav-item
     cursor pointer
     height 81px
     display flex
     justify-content flex-start
     padding-left 80px
     align-items center
-    border-top solid $color.black 0.5px
-    border-bottom solid $color.black 0.5px
+    // border-top solid $color.black 0.5px
+    border-top-style solid
+    border-top-color $color.black
+    border-top-width 0.5px
+    // border-bottom solid $color.black 0.5px
+    border-bottom-style solid
+    border-bottom-color $color.black
+    border-bottom-width 0.5px
+
+    span.selected-bar
+      background-color $color.black
+      height 4px
+      width 0px
+      transition width 0.5s, opacity 0.2s
+      opacity 0
+      margin-left 16px
 
     &:first-child
-      border-top solid $color.black 1px
+      border-top-width 1px
 
     &:last-child
-        border-bottom solid $color.black 1px
+        border-bottom-width 1px
 
     span
       font-weight normal
@@ -32,3 +46,6 @@ div.navigation-wrapper
       span
         font-weight 800
 
+      span.selected-bar
+        opacity 1
+        width 95px
