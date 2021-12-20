@@ -18,7 +18,8 @@ html(lang="en-US")
     div.set-container-wrapper
       include ./set-header
       div.set-container
-        +set_nav(setName)
+        div
+          +set_nav(setName)
         div.content
           block content
     script(src="js/index.js" defer)
