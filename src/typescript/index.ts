@@ -39,4 +39,18 @@ const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapper
   // set viewing on currently selected element group
   const currentEl = document.getElementById(setWrapperDivID)
   currentEl?.classList.add(viewingClass)
+
+  // unset viewing on all other nav items
+  const navItemWrapper = document.getElementById('feature-nav-wrapper')
+  const navItems = navItemWrapper?.getElementsByClassName('nav-item')
+  if (navItems) {
+    for (let i = 0; i < navItems.length; i++) {
+      const navItem = navItems.item(i)
+      navItem?.classList.remove('viewing')
+    }
+  }
+
+  // set nav item to viewing
+  const navItem = document.getElementById(`${setWrapperDivID}-nav-item`)
+  navItem?.classList.add('viewing')
 }

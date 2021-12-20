@@ -14,10 +14,18 @@ mixin set_nav(activeSet)
 				span.selected-bar
 
 mixin feature_nav(sets, pageID)
-	div.navigation-wrapper
+	-
+		const firstSetID = sets[0].id
+
+	div.navigation-wrapper(id="feature-nav-wrapper")
 		each set in sets
-			div.nav-item(onclick= `changeFeaturePageSet(event, '${pageID}', '${set.id}')`)
+			div.nav-item(
+				id= `${set.id}-nav-item`
+				onclick= `changeFeaturePageSet(event, '${pageID}', '${set.id}')`
+				class= `${firstSetID === set.id ? 'viewing' : ''}`
+			)
 				span= set.name
+				span.selected-bar
 
 mixin image_container(path, title, location)
 	div.image-container
