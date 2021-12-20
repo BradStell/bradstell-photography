@@ -47,15 +47,18 @@ div.main-container-wrapper
             color $color.gold
             padding-right 24px
 
+            &:hover + div.view-all-photos-line
+              width 70%
+
           div.view-all-photos-line
             background-color $color.gold
             width 62px
             height 4px
             transition width 0.5s
 
-          &:hover
-            div.view-all-photos-line
-              width 70%
+          // &:hover
+          //   div.view-all-photos-line
+          //     width 70%
 
       div.image-slider-container
         display flex
