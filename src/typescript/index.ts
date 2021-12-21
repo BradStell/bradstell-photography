@@ -24,6 +24,15 @@ const onImageLoad = (path: string) => {
   console.log(`Loaded image ${path}`)
 }
 
+const getFirstElementByClassName = (className: string): Maybe<HTMLElement> => {
+  const elms = document.getElementsByClassName(className)
+  if (elms.length === 0) {
+    return null
+  }
+
+  return elms.item(0) as Maybe<HTMLElement>
+}
+
 const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapperDivID: string) => {
   const viewingClass = 'viewing'
 
@@ -53,6 +62,14 @@ const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapper
   // set nav item to viewing
   const navItem = document.getElementById(`${setWrapperDivID}-nav-item`)
   navItem?.classList.add('viewing')
+
+  // scroll to top
+  const imagesContainer = getFirstElementByClassName('feature-content')
+  if (imagesContainer) {
+    // window.scrollTo(0, imagesContainer.offsetTop)
+    console.log('smooth scrolling')
+    imagesContainer.scrollIntoView({ behavior: 'smooth' })
+  }
 }
 
 const onFeatureMenuItemClicked = (event: MouseEvent) => {
