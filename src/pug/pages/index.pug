@@ -1,4 +1,5 @@
 extends ../partials/home-layout
+include /partials/scroll-by-text
 
 block variables
 	- const currentPage = "home"
@@ -18,3 +19,4 @@ block content
 		img.slider-image(src="images/_ASH1226.jpeg")
 		img.slider-image(src="images/_ASH1253-Edit.jpeg")
 	include /partials/footer
+	+scroll_by_text('dark', ['death valley', 'new york'])

@@ -1,2 +1,5 @@
-div.scroll-by-text
-	p surf \ waves \ sand
+mixin scroll_by_text(colorTheme, items)
+	div.scroll-by-text(class= colorTheme)
+		each item in items
+			p= item
+			p \

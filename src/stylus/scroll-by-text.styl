@@ -1,12 +1,25 @@
 div.scroll-by-text
   height 137px
-  width 100%
+  // width 100%
+  width 200vw
+  background-color transparent
+  position absolute
+  bottom 309px
+  display flex
+  flex-direction row
+
+  &.light
+    p
+      color $color.black
+
+  &.dark
+    p
+      color $color.white
 
   p
     font-weight 800
     font-size 100px
     line-height 137px
     letter-spacing 0.2em
-    color black
-    opacity 0.1
     text-transform uppercase
+    margin-right 200px
