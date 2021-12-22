@@ -23,7 +23,7 @@ div.menu-container
     div.menu-button
       span
         // text glow
-        // text-shadow: 0 0 5px #ffffff
+        // text-shadow 0 0 5px #ffffff
         color #EAEAEA
 
   div.menu-options-container
@@ -100,13 +100,23 @@ div.menu-container
             visibility visible
 
           a.sub-menu-item
-            font-weight 800
-            font-size 30px
-            line-height 60px
-            letter-spacing 0.2em
-            color white
             text-transform uppercase
             width 400px
+            opacity 0.2
+            transition opacity 0.5s ease-in-out
+
+            span
+              font-weight 800
+              font-size 30px
+              line-height 60px
+              letter-spacing 0.2em
+              color white
+
+            &:hover
+              opacity 1
+
+            &.viewing
+              opacity 1
 
       svg.close
         opacity 0
@@ -118,6 +128,10 @@ div.menu-container
 
         path
           stroke $color.white
+
+        &:hover
+          path
+            stroke #EAEAEA
 
     &.viewing
       right 0px

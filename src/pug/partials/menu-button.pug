@@ -13,12 +13,15 @@ div.menu-container(onclick='showHideMenu(event)')
 				a.menu-item(class= `${currentPage === 'photography' ? 'viewing' : ''}` href="set-001.html")
 					span Photography
 				div.menu-item(
-					class= `${currentPage === 'featured' ? 'viewing' : ''}`
-					onclick="onFeatureMenuItemClicked(event)"
+					class= `${currentPage.includes('featurepage') ? 'viewing' : ''}`
+					onclick="onFeatureMenuItemClicked()"
 				)
 					span Featured
 					include ./chevron
 				div.featured-container(id="menu-feature-container")
-					a.sub-menu-item(href="water.html") water
-					a.sub-menu-item death valley
-					a.sub-menu-item yosemte
+					a.sub-menu-item(href="water.html" class= currentPage === 'featurepage-water' ? 'viewing' : '')
+						span water
+					a.sub-menu-item
+						span death valley
+					a.sub-menu-item
+						span yosemte

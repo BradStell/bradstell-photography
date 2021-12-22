@@ -72,7 +72,7 @@ const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapper
   }
 }
 
-const onFeatureMenuItemClicked = (event: MouseEvent) => {
+const onFeatureMenuItemClicked = () => {
   const menuFeatureContainer = document.getElementById("menu-feature-container")
   const possibleCloseIcons = document.getElementsByClassName('chevron')
   const closeIcon: Maybe<HTMLElement> = possibleCloseIcons.length === 1
@@ -95,4 +95,50 @@ const onFeatureMenuItemClicked = (event: MouseEvent) => {
       closeIcon.style.opacity = '1'
     }
   }
+}
+
+type FeaturePage = string
+const featurePages: FeaturePage[] = [
+  'water'
+]
+
+document.addEventListener('DOMContentLoaded', function() {
+  const extractPageFrom = pipe(
+    split('/'),
+    last,
+    replace('.html', ''),
+  )
+
+  if (featurePages.includes(extractPageFrom(window.location.href))) {
+    onFeatureMenuItemClicked()
+  }
+}, false);
+
+// partially applied split func
+const split = (token: string) => (val: string): string[] => val.split(token)
+
+// returns the last item in a list
+const last = <T>(list: T[]): T => list[list.length-1]
+
+// partially applied replace func
+const replace = (from: string, to: string) => (val: string): string => (
+  val.replace(from, to)
+)
+
+// compose funcs together in function composition
+const compose = (...funcs: any) => (startingValue: any) => {
+  let result = startingValue
+  for (let i = funcs.length-1; i >= 0; i--) {
+    result = funcs[i](result)
+  }
+  return result
+}
+
+// compose funcs together in function composition
+const pipe = (...funcs: any) => (startingValue: any) => {
+  let result = startingValue
+  for (let i = 0; i < funcs.length; i++) {
+    result = funcs[i](result)
+  }
+  return result
 }
