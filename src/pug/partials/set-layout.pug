@@ -17,8 +17,10 @@ html(lang="en-US")
   body
     div.set-container-wrapper
       include ./set-header
+      div.set-navigation-container-tablet
+        +set_nav(setName)
       div.set-container
-        div
+        div.nav-container
           +set_nav(setName)
         div.content
           block content

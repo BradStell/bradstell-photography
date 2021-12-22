@@ -1,7 +1,23 @@
 div.set-container-wrapper
+  position relative
+
+  div.set-navigation-container-tablet
+    display none
+
   div.set-container
     display flex
     flex-direction row
 
+    @media only screen and (max-width: 1280px)
+      div.nav-container
+        display none
+
     div.navigation-wrapper
       padding-right 17.73px
+
+  @media only screen and (max-width: 1280px)
+    div.set-navigation-container-tablet
+      display block
+      position absolute
+      top 372px
+      width 100vw

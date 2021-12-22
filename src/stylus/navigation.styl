@@ -2,7 +2,7 @@ div.navigation-wrapper
   position sticky
   top 0
   background-color $color.white
-  width 520px
+  width 30vw
   display flex
   flex-direction column
 
@@ -47,3 +47,30 @@ div.navigation-wrapper
       span.selected-bar
         opacity 1
         width 95px
+
+@media only screen and (max-width 1280px)
+  div.navigation-wrapper
+    width 100%
+    flex-direction row
+
+    .nav-item
+      border none
+      flex-direction column
+      justify-content center
+      align-items flex-start
+      padding-left 36px
+      width 150px
+
+      span.selected-bar
+        margin-left 0
+
+      &:first-child
+        border none
+
+      &.viewing
+        span
+          font-weight 800
+
+        span.selected-bar
+          opacity 1
+          width 120px
