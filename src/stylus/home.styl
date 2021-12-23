@@ -10,8 +10,9 @@ div.main-container-wrapper
         position relative
 
         img.home-image
-          width 1260px
-          height 777px
+          width 1200px
+          height auto
+          max-width 100%
 
       div.name-container
         height 577px
@@ -50,17 +51,13 @@ div.main-container-wrapper
             padding-right 24px
 
             &:hover + div.view-all-photos-line
-              width 70%
+              width 700px
 
           div.view-all-photos-line
             background-color $color.gold
             width 62px
             height 4px
             transition width 0.5s
-
-          // &:hover
-          //   div.view-all-photos-line
-          //     width 70%
 
       div.image-slider-container
         display flex
@@ -71,3 +68,25 @@ div.main-container-wrapper
           width 1004px
           height 669px
 
+@media only screen and (max-width: 1200px)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.name-container
+          h1.title-name
+            font-size 150px
+        
+          div.view-all-link-wrapper
+            a.view-all-photos
+              &:hover + div.view-all-photos-line
+                width 470px
+
+        div.image-slider-container
+          img.slider-image
+            height 500px
+
+        div.scroll-by-text
+          width 300vw
+
+          p
+            font-size 75px
