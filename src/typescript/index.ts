@@ -63,12 +63,19 @@ const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapper
   const navItem = document.getElementById(`${setWrapperDivID}-nav-item`)
   navItem?.classList.add('viewing')
 
-  // scroll to top
-  const imagesContainer = getFirstElementByClassName('feature-content')
-  if (imagesContainer) {
-    // window.scrollTo(0, imagesContainer.offsetTop)
-    console.log('smooth scrolling')
-    imagesContainer.scrollIntoView({ behavior: 'smooth' })
+  // find element to scroll to based on screen width
+  const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+  console.log(`width ${width}`)
+  let element: Maybe<HTMLElement>
+  if (width <= Breakpoints.Tablet) {
+    element = getFirstElementByClassName('tablet-feature-nav')
+  } else {
+    element = getFirstElementByClassName('feature-content')
+  }
+
+  // scroll to top of feature set
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
   }
 }
 
@@ -141,4 +148,8 @@ const pipe = (...funcs: any) => (startingValue: any) => {
     result = funcs[i](result)
   }
   return result
+}
+
+enum Breakpoints {
+  Tablet = 1280
 }

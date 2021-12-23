@@ -40,6 +40,10 @@ div.main-container-wrapper
       div.spacer
         height 277px
         width 100%
+        position relative
+
+        div.tablet-feature-nav
+          display none
 
       div.feature-content
         display flex
@@ -56,3 +60,29 @@ div.main-container-wrapper
         div.side-menu
           div.navigation-wrapper
             padding-left 17.92px
+
+@media only screen and (max-width: $breakpoints.tablet)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.feature-content
+          div.side-menu
+            display none
+
+        div.spacer
+          div.tablet-feature-nav
+            display block
+            position absolute
+            bottom 0px
+            width 100%
+            height 75px
+
+            div.navigation-wrapper
+              .nav-item
+                margin-right 40px
+                width 175px
+                min-width 175px
+
+                &.viewing
+                  span.selected-bar
+                    width 170px

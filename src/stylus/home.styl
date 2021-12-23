@@ -68,7 +68,7 @@ div.main-container-wrapper
           width 1004px
           height 669px
 
-@media only screen and (max-width: 1200px)
+@media only screen and (max-width: $breakpoints.home)
   div.main-container-wrapper
     div.main-container
       div.content
@@ -90,3 +90,53 @@ div.main-container-wrapper
 
           p
             font-size 75px
+
+@media only screen and (max-width: $breakpoints.home2)
+ div.main-container-wrapper
+    div.main-container
+      div.content
+        div.name-container
+          padding-left 75px
+          height 400px
+
+          h1.title-name
+            font-size 100px
+            padding-top 20px
+            line-height 150px
+
+          div.title-content-container
+            width 550px
+
+            p.title-content
+              font-size 20px
+
+          div.view-all-link-wrapper
+            a.view-all-photos
+              font-size 14px
+
+              &:hover + div.view-all-photos-line
+                width 375px
+
+            div.view-all-photos-line
+              height 2px
+
+        div.image-slider-container
+          img.slider-image
+            height 375px
+
+        div.scroll-by-text
+          bottom 208px
+
+          p
+            font-size 45px
+            margin-right 75px
+
+        div.main-footer
+          height 274px
+
+          a.view-all-photos
+            font-size 14px
+
+          svg
+            height 24
+            width 24

@@ -8,14 +8,14 @@ div.set-container-wrapper
     display flex
     flex-direction row
 
-    @media only screen and (max-width: 1280px)
+    @media only screen and (max-width: $breakpoints.tablet)
       div.nav-container
         display none
 
     div.navigation-wrapper
       padding-right 17.73px
 
-  @media only screen and (max-width: 1280px)
+  @media only screen and (max-width: $breakpoints.tablet)
     div.set-navigation-container-tablet
       display block
       position absolute

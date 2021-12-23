@@ -48,7 +48,7 @@ div.navigation-wrapper
         opacity 1
         width 95px
 
-@media only screen and (max-width 1280px)
+@media only screen and (max-width $breakpoints.tablet)
   div.navigation-wrapper
     width 100%
     flex-direction row
@@ -60,6 +60,7 @@ div.navigation-wrapper
       align-items flex-start
       padding-left 36px
       width 150px
+      min-width 150px
 
       span.selected-bar
         margin-left 0
@@ -75,7 +76,7 @@ div.navigation-wrapper
           opacity 1
           width 120px
 
-@media only screen and (max-width 1440px)
+@media only screen and (max-width $breakpoints.small_laptop)
   div.navigation-wrapper
     .nav-item
       span
