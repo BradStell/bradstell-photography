@@ -36,6 +36,9 @@ div.menu-container
     background-color $color.black
     border-radius 100px
 
+    div.menu-icon-small
+      display none
+
     div.content
       position relative
       opacity 0
@@ -155,3 +158,60 @@ div.menu-container
 
         svg
           opacity 1
+
+@media only screen and (max-width: $breakpoints.home2)
+  div.menu-container
+    div.menu-button
+      display none
+
+      span
+        display none
+
+    div.menu-options-container
+      width 56px
+      height 56px
+      top 0px
+      right 0px
+      transition all 1s ease-in-out
+
+      &:hover
+        div.menu-icon-small
+          opacity 1
+          transition opacity 0.5s 1s ease-in-out
+
+          svg
+            transform rotate(90deg)
+            transition transform 0.5s ease-in-out
+
+      &.viewing
+          div.menu-icon-small
+            opacity 0
+            transition opacity 0.5s ease-in-out
+
+      div.menu-icon-small
+        display block
+        position absolute
+        top 16px
+        right 15px
+        width 24px
+        height 24px
+
+        svg
+          transform rotate(0deg)
+          transition transform 0.3s ease-in-out
+
+      div.content
+        div.menu-items
+          padding-top 124px
+          padding-left 84px
+
+          .menu-item
+            span
+              font-size 70px
+              lint-height 100px
+
+          div.featured-container
+            a.sub-menu-item
+              span
+                font-size 24px
+                line-height 50px

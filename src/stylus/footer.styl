@@ -16,19 +16,39 @@ div.main-footer
     line-height 22px
     letter-spacing 0.2em
 
-  svg
+  div
     position absolute
-    bottom 65px
+    bottom 58px
     right 105px
     transition opacity 0.5s
     opacity 0.7
 
-    path
-      fill $color.white
+    svg
+      path
+        fill $color.white
 
   &:hover
       a.view-all-photos
         opacity 1
 
-      svg
-        opacity 1
+      div
+        svg
+          opacity 1
+
+  div.right-triangle-medium
+    display none
+
+@media only screen and (max-width: $breakpoints.home2)
+  div.main-footer
+    height 274px
+
+    a.view-all-photos
+      font-size 14px
+
+    div.right-triangle-large
+      display none
+
+    div.right-triangle-medium
+      display block
+      bottom 64px
+      right 115px
