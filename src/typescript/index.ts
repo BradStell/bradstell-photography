@@ -11,13 +11,19 @@ const showHideMenu = (event: MouseEvent) => {
 }
 
 const onMenuClose = (event: MouseEvent) => {
-  console.log('closing menu')
   event.preventDefault()
   event.stopPropagation()
 
   const menuHandle = findElemBy('menu-content-handle')
   menuHandle?.classList.remove('viewing')
   document.body.classList.remove('no-scroll')
+
+  // add rotate-out class to the close icon (will add rotate animation)
+  const closeSVG = findElemBy('close-icon')
+  closeSVG?.classList.add('rotate-out')
+
+  // after a second remove the rotate class
+  setTimeout(() => closeSVG?.classList.remove('rotate-out'), 2000)
 }
 
 const onImageLoad = (path: string) => {

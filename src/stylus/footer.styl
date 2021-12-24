@@ -52,3 +52,18 @@ div.main-footer
       display block
       bottom 64px
       right 115px
+
+@media only screen and (max-width: $breakpoints.mobile)
+  div.main-footer
+    display flex
+    justify-content center
+    align-items center
+    height 150px
+
+    a.view-all-photos
+      position static
+      font-size 12px
+      opacity 1
+
+    div.right-triangle-medium
+      display none

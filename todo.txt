@@ -1,7 +1,1 @@
-* main menu is acting weird
-	- the underlying content block is invisible but clickable
-	- the individual hidden links can be clicked without opening the menu
-
-* feature section of menu needs to collapse and expand
-
-* mobile view
+* rotate menu close icon on close click
