@@ -39,6 +39,9 @@ div.menu-container
     div.menu-icon-small
       display none
 
+    div.menu-icon-mobile
+      display none
+
     div.content
       position relative
       opacity 0
@@ -208,10 +211,74 @@ div.menu-container
           .menu-item
             span
               font-size 70px
-              lint-height 100px
+              line-height 100px
 
           div.featured-container
             a.sub-menu-item
               span
                 font-size 24px
                 line-height 50px
+
+@media only screen and (max-width: $breakpoints.mobile)
+  div.menu-container
+    div.menu-button
+      display none
+
+      span
+        display none
+
+    div.menu-options-container
+      width 48px
+      height 48px
+      top 0px
+      right 0px
+      transition all 1s ease-in-out
+
+      &:hover
+        div.menu-icon-mobile
+          opacity 1
+          transition opacity 0.5s 1s ease-in-out
+
+          svg
+            transform rotate(90deg)
+            transition transform 0.5s ease-in-out
+
+      &.viewing
+          div.menu-icon-mobile
+            opacity 0
+            transition opacity 0.5s ease-in-out
+
+      div.menu-icon-small
+        display none
+
+      div.menu-icon-mobile
+        display block
+        position absolute
+        top 14px
+        right 13px
+        width 20px
+        height 20px
+
+        svg
+          transform rotate(0deg)
+          transition transform 0.3s ease-in-out
+
+      div.content
+        svg.close
+          top 30px
+          right 30px
+
+        div.menu-items
+          padding-top 80px
+          padding-left 18px
+
+          .menu-item
+            span
+              font-size 56px
+              line-height 76px
+
+          div.featured-container
+            a.sub-menu-item
+              span
+                font-size 15px
+                line-height 32px
