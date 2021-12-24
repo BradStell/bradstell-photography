@@ -130,3 +130,62 @@ div.main-container-wrapper
           p
             font-size 45px
             margin-right 75px
+
+@media only screen and (max-width: $breakpoints.tablet)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.home-image-and-menu-container
+          img.home-image
+            width 830px
+
+@media only screen and (max-width: $breakpoints.mobile)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.name-container
+          padding-left 24px
+          height 300px
+
+          h1.title-name
+            font-size 70px
+            line-height 100px
+
+          div.title-content-container
+            width 350px
+
+            p.title-content
+              font-size 16px
+
+          div.view-all-link-wrapper
+            padding-top 35px
+
+            a.view-all-photos
+              font-size 12px
+              padding-right 18px
+
+              &:hover + div.view-all-photos-line
+                width 212px
+
+        div.image-slider-container
+          img.slider-image
+            height 175px
+
+        div.scroll-by-text
+          bottom 181px
+          height 37px
+
+          p
+            font-size 22px
+            margin-right 24px
+
+        div.main-footer
+          height 150px
+
+          a.view-all-photos
+            bottom 47px
+            right 150px
+
+          div.right-triangle-medium
+            bottom 42px
+            right 108px
