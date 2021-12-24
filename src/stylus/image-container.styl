@@ -2,7 +2,6 @@ div.image-container
   img
     width 100%
     height auto
-    // max-width 650px
 
   div.content-wrapper
     height 119.8px
@@ -20,3 +19,10 @@ div.image-container
 
     p.location
       font-weight normal
+
+@media only screen and (max-width: $breakpoints.mobile)
+  div.image-container
+    div.content-wrapper
+      height 93px
+      padding-top 20px
+      padding-left 24px
