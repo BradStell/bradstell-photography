@@ -11,6 +11,10 @@ block variables
 		]
 
 block content
+	//- move these menus up to feature-layout so all components inherit it
+	div.set-navigation-container-tablet
+		+feature_nav(featureData, pageID)
+
 	div.feature-content(id= pageID)
 		div.side-menu
 			+feature_nav(featureData, pageID)

@@ -91,7 +91,9 @@ const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapper
 
 const getFeatureImagesContainerBasedOnDeviceWidth = (width: number): Maybe<HTMLElement> => {
   if (width <= Breakpoints.Tablet) {
-    return getFirstElementByClassNames('tablet-feature-nav')
+    // return getFirstElementByClassNames('set-navigation-container-tablet')
+    // position sticky makes it not scroll back up -  need to address that
+    return getFirstElementByClassNames('feature-content')
   } 
   return getFirstElementByClassNames('feature-content')
 }
