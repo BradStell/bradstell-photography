@@ -6,18 +6,24 @@ div.menu-container
   z-index 100
 
   div.menu-button
-    display flex
-    justify-content left
-    align-items center
-    padding 40px
-    width 344px
-    height 80px
-    background-color $color.black
-    border-radius 100px
+    display none
 
     span
-      color #FFFFFF
-      font-size 24px
+      display none
+
+  // div.menu-button
+  //   display flex
+  //   justify-content left
+  //   align-items center
+  //   padding 40px
+  //   width 344px
+  //   height 80px
+  //   background-color $color.black
+  //   border-radius 100px
+
+  //   span
+  //     color #FFFFFF
+  //     font-size 24px
 
   &:hover
     div.menu-button
@@ -31,10 +37,19 @@ div.menu-container
     top 0px
     right 16px
     transition width 1s, height 1s, right 0.5s 0.2s, top 0.5s 0.2s, border-radius 1s 0.2s, opacity 0.2s
-    width 220px
+    // width 220px
+    width 344px
     height 80px
     background-color $color.black
     border-radius 100px
+
+    span.menu-text
+      color #FFFFFF
+      font-size 24px
+      padding 40px
+      line-height 80px
+      opacity 1
+      transition opacity 0.5s 1s ease-in-out, line-height 0.5s ease-in-out
 
     div.menu-icon-small
       display none
@@ -129,7 +144,7 @@ div.menu-container
         transition opacity 0.3s 1s
         position absolute
         top 64px
-        right 64px
+        right 100px
         z-index 201
 
         path
@@ -145,6 +160,12 @@ div.menu-container
       top -40px
       right -40px
       border-radius 0px
+
+      span.menu-text
+        opacity 0
+        height 0px
+        line-height 0px
+        transition opacity 0.5s ease-in-out, line-height 0.5s ease-in-out
 
       div.content
         opacity 1

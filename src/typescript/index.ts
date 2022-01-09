@@ -1,5 +1,25 @@
 type Maybe<T> = T | null | undefined
 
+// compose funcs together in function composition
+const compose = (...funcs: any) => (startingValue: any) => {
+  let result = startingValue
+  for (let i = funcs.length-1; i >= 0; i--) {
+    result = funcs[i](result)
+  }
+  return result
+}
+
+// compose funcs together in function composition
+const pipe = (...funcs: any) => (startingValue: any) => {
+  let result = startingValue
+  for (let i = 0; i < funcs.length; i++) {
+    result = funcs[i](result)
+  }
+  return result
+}
+
+const cssVisibilityClassName = 'viewing'
+
 const navigateTo = (path: string) => window.location.href = path
 
 const findElemBy = (id: string): Maybe<HTMLElement> => document.getElementById(id)
@@ -7,7 +27,7 @@ const findElemBy = (id: string): Maybe<HTMLElement> => document.getElementById(i
 const showHideMenu = (event: MouseEvent) => {
   document.body.classList.add('no-scroll')
   const menuHandle = findElemBy('menu-content-handle')
-  menuHandle?.classList.add('viewing')
+  menuHandle?.classList.add(cssVisibilityClassName)
 }
 
 const onMenuClose = (event: MouseEvent) => {
@@ -15,7 +35,7 @@ const onMenuClose = (event: MouseEvent) => {
   event.stopPropagation()
 
   const menuHandle = findElemBy('menu-content-handle')
-  menuHandle?.classList.remove('viewing')
+  menuHandle?.classList.remove(cssVisibilityClassName)
   document.body.classList.remove('no-scroll')
 
   // add rotate-out class to the close icon (will add rotate animation)
@@ -30,59 +50,50 @@ const onImageLoad = (path: string) => {
   console.log(`Loaded image ${path}`)
 }
 
-const getFirstElementByClassName = (className: string): Maybe<HTMLElement> => {
-  const elms = document.getElementsByClassName(className)
-  if (elms.length === 0) {
+const getElementsByClassNames = (className: string): HTMLCollectionOf<Element> => (
+  document.getElementsByClassName(className)
+)
+
+const firstElement = (elements: HTMLCollectionOf<Element>): Maybe<HTMLElement> => {
+  if (elements.length === 0) {
     return null
   }
 
-  return elms.item(0) as Maybe<HTMLElement>
+  return elements.item(0) as Maybe<HTMLElement>
 }
 
-const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapperDivID: string) => {
-  const viewingClass = 'viewing'
+const getFirstElementByClassNames: (classNames: string) => Maybe<HTMLElement> = compose(firstElement, getElementsByClassNames)
 
-  // unset viewing on all that have it
-  const featureCs = document.getElementsByClassName('feature-container')
-  for (let i = 0; i < featureCs.length; i++) {
-    const item = featureCs.item(i)
-    if (item !== null) {
-      item.classList.remove(viewingClass)
-    }
-  }
+const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapperDivID: string) => {
+  // Remove class 'viewing' from 
+  const visibleFeatureSet = getFirstElementByClassNames(`feature-container ${cssVisibilityClassName}`)
+  visibleFeatureSet?.classList.remove(cssVisibilityClassName)
 
   // set viewing on currently selected element group
-  const currentEl = document.getElementById(setWrapperDivID)
-  currentEl?.classList.add(viewingClass)
+  const selectedFeatureSet = document.getElementById(setWrapperDivID)
+  selectedFeatureSet?.classList.add(cssVisibilityClassName)
 
   // unset viewing on all other nav items
-  const navItemWrapper = document.getElementById('feature-nav-wrapper')
-  const navItems = navItemWrapper?.getElementsByClassName('nav-item')
-  if (navItems) {
-    for (let i = 0; i < navItems.length; i++) {
-      const navItem = navItems.item(i)
-      navItem?.classList.remove('viewing')
-    }
-  }
+  const visibleFeatureMenuItem = getFirstElementByClassNames(`nav-item ${cssVisibilityClassName}`)
+  visibleFeatureMenuItem?.classList.remove(cssVisibilityClassName)
+  visibleFeatureMenuItem?.classList.add('bond')
 
   // set nav item to viewing
-  const navItem = document.getElementById(`${setWrapperDivID}-nav-item`)
-  navItem?.classList.add('viewing')
+  const selectedNavItem = document.getElementById(`${setWrapperDivID}-nav-item`)
+  selectedNavItem?.classList.add(cssVisibilityClassName)
+  selectedNavItem?.classList.add('borne')
 
   // find element to scroll to based on screen width
   const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-  console.log(`width ${width}`)
-  let element: Maybe<HTMLElement>
-  if (width <= Breakpoints.Tablet) {
-    element = getFirstElementByClassName('tablet-feature-nav')
-  } else {
-    element = getFirstElementByClassName('feature-content')
-  }
+  const featureImagesContainer = getFeatureImagesContainerBasedOnDeviceWidth(width)
+  featureImagesContainer?.scrollIntoView({ behavior: 'smooth' })
+}
 
-  // scroll to top of feature set
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
+const getFeatureImagesContainerBasedOnDeviceWidth = (width: number): Maybe<HTMLElement> => {
+  if (width <= Breakpoints.Tablet) {
+    return getFirstElementByClassNames('tablet-feature-nav')
+  } 
+  return getFirstElementByClassNames('feature-content')
 }
 
 const onFeatureMenuItemClicked = () => {
@@ -137,24 +148,6 @@ const last = <T>(list: T[]): T => list[list.length-1]
 const replace = (from: string, to: string) => (val: string): string => (
   val.replace(from, to)
 )
-
-// compose funcs together in function composition
-const compose = (...funcs: any) => (startingValue: any) => {
-  let result = startingValue
-  for (let i = funcs.length-1; i >= 0; i--) {
-    result = funcs[i](result)
-  }
-  return result
-}
-
-// compose funcs together in function composition
-const pipe = (...funcs: any) => (startingValue: any) => {
-  let result = startingValue
-  for (let i = 0; i < funcs.length; i++) {
-    result = funcs[i](result)
-  }
-  return result
-}
 
 enum Breakpoints {
   Tablet = 1280
