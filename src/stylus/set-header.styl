@@ -5,9 +5,6 @@ div.set-header
   padding-left 164px
   position relative
 
-  @media only screen and (max-width: 1000px)
-    background-color cyan
-
   div.header-container
     p.name
       color $color.black
@@ -22,3 +19,20 @@ div.set-header
       font-size 120px
       line-height 164px
       letter-spacing -0.05em
+
+@media only screen and (max-width: $breakpoints.home)
+  div.set-header
+    padding-top 100px
+
+@media only screen and (max-width: $breakpoints.home2)
+  div.set-header
+    padding-left 64px
+    padding-top 100px
+
+    div.header-container
+      p.name
+        font-size 20px
+
+      h1.photography-title
+        font-size 94px
+        line-height 143px
