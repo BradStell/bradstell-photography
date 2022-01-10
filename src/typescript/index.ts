@@ -50,8 +50,8 @@ const onImageLoad = (path: string) => {
   console.log(`Loaded image ${path}`)
 }
 
-const getElementsByClassNames = (className: string): HTMLCollectionOf<Element> => (
-  document.getElementsByClassName(className)
+const getElementsByClassNames = (className: string, parentElement?: Maybe<HTMLElement>): HTMLCollectionOf<Element> => (
+  (parentElement ?? document).getElementsByClassName(className)
 )
 
 const firstElement = (elements: HTMLCollectionOf<Element>): Maybe<HTMLElement> => {
@@ -62,7 +62,7 @@ const firstElement = (elements: HTMLCollectionOf<Element>): Maybe<HTMLElement> =
   return elements.item(0) as Maybe<HTMLElement>
 }
 
-const getFirstElementByClassNames: (classNames: string) => Maybe<HTMLElement> = compose(firstElement, getElementsByClassNames)
+const getFirstElementByClassNames: (classNames: string, parentElement?: Maybe<HTMLElement>) => Maybe<HTMLElement> = compose(firstElement, getElementsByClassNames)
 
 const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapperDivID: string) => {
   // Remove class 'viewing' from 
@@ -74,14 +74,14 @@ const changeFeaturePageSet = (event: MouseEvent, parentDivID: string, setWrapper
   selectedFeatureSet?.classList.add(cssVisibilityClassName)
 
   // unset viewing on all other nav items
-  const visibleFeatureMenuItem = getFirstElementByClassNames(`nav-item ${cssVisibilityClassName}`)
-  visibleFeatureMenuItem?.classList.remove(cssVisibilityClassName)
-  visibleFeatureMenuItem?.classList.add('bond')
+  Array
+    .from(getElementsByClassNames(`nav-item ${cssVisibilityClassName}`))
+    .forEach(item => item?.classList.remove(cssVisibilityClassName))
 
   // set nav item to viewing
-  const selectedNavItem = document.getElementById(`${setWrapperDivID}-nav-item`)
-  selectedNavItem?.classList.add(cssVisibilityClassName)
-  selectedNavItem?.classList.add('borne')
+  Array
+    .from(document.getElementsByName(`${setWrapperDivID}-nav-item`))
+    .forEach(item => item?.classList.add(cssVisibilityClassName))
 
   // find element to scroll to based on screen width
   const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth

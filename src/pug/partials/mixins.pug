@@ -21,6 +21,7 @@ mixin feature_nav(sets, pageID)
 		each set in sets
 			div.nav-item(
 				id= `${set.id}-nav-item`
+				name= `${set.id}-nav-item`
 				onclick= `changeFeaturePageSet(event, '${pageID}', '${set.id}')`
 				class= `${firstSetID === set.id ? 'viewing' : ''}`
 			)
