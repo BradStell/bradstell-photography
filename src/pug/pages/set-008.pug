@@ -1,0 +1,30 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 008'
+	- const currentPage = "photography"
+
+block content
+	div.grid.horizontal
+		+image_container('People/bradley-stell-76.jpg', 'No. 008.01', 'Monterey, CA')
+		+image_container('People/bradley-stell-127.jpg', 'No. 008.02', 'Mesquite Flat Sand Dunes, Death Valley, CA')
+
+		+image_container('People/bradley-stell-42.jpg', 'No. 008.03', 'Outer Banks, NC')
+		+image_container('People/bradley-stell-43.jpg', 'No. 008.04', 'Outer Banks, NC')
+
+		+image_container('People/_ASH1340.jpeg', 'No. 008.05', 'Mesquite Flat Sand Dunes, Death Valley, CA')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('People/bradley-stell-18.jpg', 'No. 008.06', 'San Fransisco, CA')
+		+image_container('People/bradley-stell-1.jpg', 'No. 008.07', 'White Sands, NM')
+
+		+image_container('People/bradley-stell-39.jpg', 'No. 008.08', 'Austin, TX')
+		+image_container('People/bradley-stell-7.jpg', 'No. 008.09', 'White Sands, NM')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('People/bradley-stell-29.jpg', 'No. 008.10', 'Death Valley, CA')
+		+image_container('People/bradley-stell-31.jpg', 'No. 008.11', 'Death Valley, CA')

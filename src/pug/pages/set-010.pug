@@ -1,0 +1,20 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 010'
+	- const currentPage = "photography"
+
+block content
+	div.grid.horizontal
+		+image_container('Trees/bradley-stell-11.jpg', 'No. 010.01', 'Yosemite, CA')
+		+image_container('Trees/bradley-stell-40.jpg', 'No. 010.02', 'North Carolina')
+
+		+image_container('Trees/bradley-stell-111.jpg', 'No. 010.03', 'Oregon')
+		+image_container('Trees/bradley-stell-112.jpg', 'No. 010.04', 'Oregon')
+
+		+image_container('Trees/bradley-stell-115.jpg', 'No. 010.05', 'Oregon')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('Trees/bradley-stell-114.jpg', 'No. 010.06', 'Oregon')

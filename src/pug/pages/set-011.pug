@@ -1,0 +1,10 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 011'
+	- const currentPage = "photography"
+
+block content
+	div.grid.horizontal
+		+image_container('Astro/bradley-stell-32.jpg', 'No. 011.01', 'Badwater Basin, D.V.')
+		+image_container('Astro/bradley-stell-33.jpg', 'No. 011.02', 'Badwater Basin, D.V.')

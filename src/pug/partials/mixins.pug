@@ -5,11 +5,18 @@ mixin set_nav(activeSet)
 			{ name: 'No. 002', link: 'set-002.html' },
 			{ name: 'No. 003', link: 'set-003.html' },
 			{ name: 'No. 004', link: 'set-004.html' },
+			{ name: 'No. 005', link: 'set-005.html' },
+			{ name: 'No. 006', link: 'set-006.html' },
+			{ name: 'No. 007', link: 'set-007.html' },
+			{ name: 'No. 008', link: 'set-008.html' },
+			{ name: 'No. 009', link: 'set-009.html' },
+			{ name: 'No. 010', link: 'set-010.html' },
+			{ name: 'No. 011', link: 'set-011.html' },
 		]
 
 	div.navigation-wrapper
 		each set in sets
-			a.nav-item(href= link class= activeSet === set.name ? 'viewing' : '')
+			a.nav-item(href= `${set.link}` class= activeSet === set.name ? 'viewing' : '')
 				span= set.name
 				span.selected-bar
 

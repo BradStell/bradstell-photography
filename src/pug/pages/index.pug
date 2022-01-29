@@ -6,7 +6,8 @@ block variables
 
 block content
 	div.home-image-and-menu-container
-		img.home-image(src="images/_ASH1170-Edit.jpeg")
+		//- make array and pick random one
+		img.home-image(src="images/Mountains/bradley-stell-121.jpg")
 		include /partials/menu-button
 	div.name-container
 		h1.title-name Brad Stell
@@ -16,7 +17,8 @@ block content
 			a.view-all-photos(href="set-001.html") VIEW ALL PHOTOS
 			div.view-all-photos-line
 	div.image-slider-container
-		img.slider-image(src="images/_ASH1226.jpeg")
-		img.slider-image(src="images/_ASH1253-Edit.jpeg")
+		img.slider-image(src="images/Sand/bradley-stell-125.jpg")
+		//- img.slider-image(src="images/Ocean/bradley-stell-89.jpg")
+		img.slider-image(src="images/Trees/bradley-stell-11.jpg")
 	include /partials/footer
 	+scroll_by_text('dark', ['death valley', 'new york'])

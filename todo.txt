@@ -1,1 +1,9 @@
-* rotate menu close icon on close click
+------- Pre - Deployement ------------------------------------------
+* tidy up (re-edit) photos whos deminsions are off
+* edit any photos that need color adjustments
+	x mobile view when menu floats to top needs to be sticky
+	x mobile view when menu floats to top on desktop overflows x-axis
+
+------- Post - Deployement ------------------------------------------
+* add in set titles next to No. in menu
+* photo page should load content page without page load ( like the feature pages )

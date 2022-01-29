@@ -15,12 +15,14 @@ div.set-container-wrapper
     div.navigation-wrapper
       padding-right 17.73px
 
-  @media only screen and (max-width: $breakpoints.tablet)
+@media only screen and (max-width: $breakpoints.tablet)
+  div.set-container-wrapper
     div.set-navigation-container-tablet
-      display block
-      position absolute
-      top 372px
-      width 96vw
+        display inline
+        width 96vw
+
+      div.navigation-wrapper
+        overflow-x scroll
 
 @media only screen and (max-width: $breakpoints.mobile)
   div.set-container-wrapper

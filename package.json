@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run watch-all",
     "build": "npm run build-stylus && npm run build-pug && npm run build-ts",
     "build-stylus": "stylus src/stylus/main.styl -o public/styles/jamesbradley.css",
     "watch-stylus": "stylus -w src/stylus/main.styl -o public/styles/jamesbradley.css",
@@ -18,8 +19,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^7.0.0",
+    "live-server": "^1.2.1",
     "pug": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6",
-    "stylus": "^0.55.0"
+    "stylus": "^0.55.0",
+    "typescript": "^4.5.5"
   }
 }

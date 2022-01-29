@@ -1,0 +1,25 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 009'
+	- const currentPage = "photography"
+
+block content
+	div.grid.horizontal
+		+image_container('Cars/bradley-stell-72.jpg', 'No. 009.01', 'California')
+		+image_container('Cars/bradley-stell-105.jpg', 'No. 009.02', 'California')
+
+		+image_container('Cars/bradley-stell-108.jpg', 'No. 009.03', 'Oregon')
+		+image_container('Cars/bradley-stell-110.jpg', 'No. 009.04', 'Oregon')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('Cars/bradley-stell-106.jpg', 'No. 009.05', 'Oregon')
+		+image_container('Cars/bradley-stell-107.jpg', 'No. 009.06', 'Oregon')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('Cars/bradley-stell-73.jpg', 'No. 009.07', 'California')
+		+image_container('Cars/bradley-stell-104.jpg', 'No. 009.08', 'California')

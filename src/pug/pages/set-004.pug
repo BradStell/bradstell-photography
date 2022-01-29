@@ -1,0 +1,24 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 004'
+	- const currentPage = "photography"
+
+block content
+	div.grid.horizontal
+		+image_container('Abstract/bradley-stell-124.jpg', 'No. 004.01', 'Death Valley, CA')
+		+image_container('Abstract/_ASH1244-Edit copy.jpeg', 'No. 004.02', 'Death Valley, CA')
+
+		+image_container('Abstract/bradley-stell-38.jpg', 'No. 004.03', 'Colorado')
+		+image_container('Abstract/bradley-stell-134.jpg', 'No. 004.04', 'Death Valley, CA')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('Abstract/bradley-stell-48.jpg', 'No. 004.05', 'White Sands, NM')
+		+image_container('Abstract/bradley-stell-49.jpg', 'No. 004.06', 'White Sands, NM')
+
+		+image_container('Abstract/bradley-stell-126.jpg', 'No. 004.07', 'Death Valley, CA')
+		+image_container('Abstract/bradley-stell-128.jpg', 'No. 004.08', 'Death Valley, CA')
+
+		+image_container('Abstract/bradley-stell-113.jpg', 'No. 004.09', 'Yosemite, CA')
