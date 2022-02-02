@@ -1,7 +1,8 @@
 ------- Pre - Deployement ------------------------------------------
 * add header to backend to tell clients to cache stuff
-* if (document.location.hostname.search("myproductiondomainname.com") !== -1) {
 * image load placeholders to prevent page jump
+	x don't track google analytics on local
+		- if (document.location.hostname.search("myproductiondomainname.com") !== -1) {
 	x make at least 1 feature page
 	x edit any photos that need color adjustments
 	x tidy up (re-edit) photos whos deminsions are off

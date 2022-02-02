@@ -6,14 +6,12 @@ html(lang="en-US")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-171805476-1")
     script.
-      //- if (document.location.hostname.search("myproductiondomainname.com") !== -1) {
-      console.log('brad here')
-      console.log(`doc loc hn = ${document.location.hostname}`)
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-171805476-1');
+      if (document.location.hostname.includes('bradleystell.com')) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-171805476-1');
+      }
 
     title= `Brad Stell Photography`
     meta(charset="utf-8")
