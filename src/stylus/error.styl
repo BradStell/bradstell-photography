@@ -1,0 +1,105 @@
+div.main-container-wrapper
+  div.main-container
+    div.content
+      overflow hidden
+
+      div.background-img
+        width 100vw
+        height 100vh
+        background-image url('images/Sand/bradley-stell-125.jpg')
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+
+        p.message
+          font-size 100px
+          font-weight 800
+
+        a.home-link
+          position absolute
+          bottom 200px
+          color $color.white
+          background-color $color.black
+          text-align center
+          border-radius 10px
+          padding-left 50px
+          padding-right 50px
+          padding-top 16px
+          padding-bottom 16px
+          font-size 24px
+
+@media only screen and (max-width: $breakpoints.small_laptop)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.background-img
+          p.message
+            font-size 75px
+
+@media only screen and (max-width: $breakpoints.home)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.background-img
+          p.message
+            font-size 58px
+
+@media only screen and (max-width: $breakpoints.home2)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.background-img
+          p.message
+            font-size 48px
+
+@media only screen and (max-width: $breakpoints.feature1)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.background-img
+          p.message
+            font-size 40px
+
+@media only screen and (max-width: $breakpoints.feature2)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.background-img
+          p.message
+            font-size 35px
+
+@media only screen and (max-width: $breakpoints.mobile)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.background-img
+
+          p.message
+            font-size 26px
+
+          a.home-link
+            bottom 50px
+            padding-left 40px
+            padding-right 40px
+            padding-top 12px
+            padding-bottom 12px
+            font-size 18px
+
+@media only screen and (max-width: $breakpoints.mobile3)
+  div.main-container-wrapper
+    div.main-container
+      div.content
+        div.background-img
+          background-position center
+
+          p.message
+            font-size 22px
+
+          a.home-link
+            bottom 50px
+            padding-left 40px
+            padding-right 40px
+            padding-top 12px
+            padding-bottom 12px
+            font-size 18px

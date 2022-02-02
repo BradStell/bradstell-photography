@@ -125,7 +125,7 @@ const onFeatureMenuItemClicked = () => {
 
 type FeaturePage = string
 const featurePages: FeaturePage[] = [
-  'water'
+  'duality'
 ]
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,0 +1,57 @@
+extends ../partials/feature-layout
+
+block variables
+	-
+		var currentPage = 'featurepage-duality'
+		const pageID = 'duality-feature-content'
+		const featureData = [
+			{ name: 'Duality No. 01', id: 'duality-01' },
+			{ name: 'Duality No. 02', id: 'duality-02' },
+			{ name: 'Duality No. 03', id: 'duality-03' },
+			{ name: 'Duality No. 04', id: 'duality-04' },
+		]
+		const topImgR = 'feature-pairs/bradley-stell-125.jpg'
+		const topImgL = 'feature-pairs/bradley-stell-123.jpg'
+		const title = 'Duality'
+		const explanation = 'Though a single image holds much beauty, a duo of images unlocks new beauty not previously found when viewed alone.'
+
+block content
+	//- move these menus up to feature-layout so all components inherit it
+	div.set-navigation-container-tablet
+		+feature_nav(featureData, pageID)
+
+	div.feature-content(id= pageID)
+		div.side-menu
+			+feature_nav(featureData, pageID)
+
+		///////////////////////////////////////////////////////////////////////////////////////
+		//- Water No. 01
+		div.feature-container(id= `${featureData[0].id}` class="viewing")
+			div.grid.horizontal
+				+image_container('feature-pairs/bradley-stell-125.jpg', 'No. 001.01', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-130.jpg', 'No. 001.02', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-180.jpg', 'No. 001.01', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-124.jpg', 'No. 001.02', 'Sierras, CA')
+
+		///////////////////////////////////////////////////////////////////////////////////////
+		//- Water No. 02
+		div.feature-container(id= `${featureData[1].id}`)
+			div.grid.horizontal
+				+image_container('feature-pairs/bradley-stell-51.jpg', 'No. 001.01', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-52.jpg', 'No. 001.02', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-64.jpg', 'No. 001.02', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-65.jpg', 'No. 001.01', 'Sierras, CA')
+
+		///////////////////////////////////////////////////////////////////////////////////////
+		//- Water No. 03
+		div.feature-container(id= `${featureData[2].id}`)
+			div.grid.horizontal
+				+image_container('feature-pairs/bradley-stell-121.jpg', 'No. 001.01', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-123.jpg', 'No. 001.02', 'Sierras, CA')
+
+		///////////////////////////////////////////////////////////////////////////////////////
+		//- Water No. 04
+		div.feature-container(id= `${featureData[3].id}`)
+			div.grid.horizontal
+				+image_container('feature-pairs/bradley-stell-34.jpg', 'No. 001.01', 'Sierras, CA')
+				+image_container('feature-pairs/bradley-stell-37.jpg', 'No. 001.02', 'Sierras, CA')

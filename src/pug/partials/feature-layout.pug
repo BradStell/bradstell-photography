@@ -4,7 +4,16 @@ include /partials/mixins
 doctype html
 html(lang="en-US")
   head
-    title= `James Bradley Photography`
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-171805476-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-171805476-1');
+
+    title= `Brad Stell Photography`
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2.0")
     meta(http-equiv="content-language" content="en")
@@ -20,14 +29,14 @@ html(lang="en-US")
         div.content
           div.header-container
             div.image-container
-              img.slider-image(src="images/_ASH1224.jpeg")
-              img.slider-image(src="images/_ASH1310-Edit-Edit.jpeg")
+              img.slider-image(src= `images/${topImgR}`)
+              img.slider-image(src= `images/${topImgL}`)
             include /partials/menu-button
 
           div.featured-info-section
-            h1.feature-title Water
+            h1.feature-title= title
             div.feature-content-wrapper
-              p This is some really long explanation on water, and it's effects on the soul, and the environment. and how being water concience is going to be a future neccesity, unless we can get the weather back on track.
+              p= explanation
 
           include /partials/scroll-by-text
 

@@ -1,8 +1,12 @@
 ------- Pre - Deployement ------------------------------------------
 * tidy up (re-edit) photos whos deminsions are off
 * edit any photos that need color adjustments
+* make at least 1 feature page
+* make http to https redirect
+* image load placeholders to prevent page jump
 	x mobile view when menu floats to top needs to be sticky
 	x mobile view when menu floats to top on desktop overflows x-axis
+* you're lost - enjoy the view
 
 ------- Post - Deployement ------------------------------------------
 * add in set titles next to No. in menu

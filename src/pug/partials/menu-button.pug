@@ -13,7 +13,7 @@ div.menu-container(onclick='showHideMenu(event)')
 			include ./close-x
 
 			div.menu-items
-				a.menu-item(class= `${currentPage === 'home' ? 'viewing' : ''}` href="index.html")
+				a.menu-item(class= `${currentPage === 'home' ? 'viewing' : ''}` href="/")
 					span Home
 				a.menu-item(class= `${currentPage === 'photography' ? 'viewing' : ''}` href="set-001.html")
 					span Photography
@@ -24,9 +24,5 @@ div.menu-container(onclick='showHideMenu(event)')
 					span Featured
 					include ./chevron
 				div.featured-container(id="menu-feature-container")
-					a.sub-menu-item(href="water.html" class= currentPage === 'featurepage-water' ? 'viewing' : '')
-						span water
-					a.sub-menu-item
-						span death valley
-					a.sub-menu-item
-						span yosemte
+					a.sub-menu-item(href="duality.html" class= currentPage === 'featurepage-duality' ? 'viewing' : '')
+						span duality

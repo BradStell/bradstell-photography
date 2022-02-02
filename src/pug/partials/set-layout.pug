@@ -4,7 +4,16 @@ include /partials/mixins
 doctype html
 html(lang="en-US")
   head
-    title= `James Bradley - ${setName}`
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-171805476-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-171805476-1');
+
+    title= `Brad Stell - ${setName}`
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2.0")
     meta(http-equiv="content-language" content="en")
