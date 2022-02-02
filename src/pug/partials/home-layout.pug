@@ -6,6 +6,9 @@ html(lang="en-US")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-171805476-1")
     script.
+      //- if (document.location.hostname.search("myproductiondomainname.com") !== -1) {
+      console.log('brad here')
+      console.log(`doc loc hn = ${document.location.hostname}`)
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -16,10 +19,10 @@ html(lang="en-US")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2.0")
     meta(http-equiv="content-language" content="en")
-    link(rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png")
-    link(rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png")
-    link(rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png")
-    link(rel="manifest" href="./site.webmanifest")
+    link(rel="apple-touch-icon" sizes="180x180" href= `./apple-touch-icon${appleFaviconNum}.png`)
+    link(rel="icon" type="image/png" sizes="32x32" href= `./images/favicon-${faviconNum}32x32.png`)
+    link(rel="icon" type="image/png" sizes="16x16" href= `./images/favicon-${faviconNum}16x16.png`)
+    //- link(rel="manifest" href="./site.webmanifest")
     style
       include ../../../public/styles/jamesbradley.css
   body

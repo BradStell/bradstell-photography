@@ -1,13 +1,16 @@
 ------- Pre - Deployement ------------------------------------------
-* tidy up (re-edit) photos whos deminsions are off
-* edit any photos that need color adjustments
-* make at least 1 feature page
-* make http to https redirect
+* add header to backend to tell clients to cache stuff
+* if (document.location.hostname.search("myproductiondomainname.com") !== -1) {
 * image load placeholders to prevent page jump
+	x make at least 1 feature page
+	x edit any photos that need color adjustments
+	x tidy up (re-edit) photos whos deminsions are off
+	x make http to https redirect
 	x mobile view when menu floats to top needs to be sticky
 	x mobile view when menu floats to top on desktop overflows x-axis
-* you're lost - enjoy the view
+	x you're lost - enjoy the view
 
 ------- Post - Deployement ------------------------------------------
 * add in set titles next to No. in menu
 * photo page should load content page without page load ( like the feature pages )
+
