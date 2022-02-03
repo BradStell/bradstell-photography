@@ -1,5 +1,6 @@
 ------- Pre - Deployement ------------------------------------------
 * image load placeholders to prevent page jump
+* ci-cd
 * cleanup favicon vars
 	x add header to backend to tell clients to cache stuff
 	x don't track google analytics on local
