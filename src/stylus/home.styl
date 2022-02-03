@@ -13,6 +13,11 @@ div.main-container-wrapper
           width 1200px
           height auto
           max-width 100%
+          opacity 0
+          transition opacity 1s ease-in-out
+
+          &.fade-in
+            opacity 1
 
       div.name-container
         height 650px
@@ -67,6 +72,11 @@ div.main-container-wrapper
         img.slider-image
           width 1004px
           height 669px
+          opacity 0
+          transition opacity 1s ease-in-out
+
+          &.fade-in
+            opacity 1
 
 @media only screen and (max-width: $breakpoints.home)
   div.main-container-wrapper

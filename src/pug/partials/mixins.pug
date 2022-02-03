@@ -35,15 +35,47 @@ mixin feature_nav(sets, pageID)
 				span= set.name
 				span.selected-bar
 
-mixin image_container(path, title, location)
+mixin image_container(path, title, location, aspectRatio)
+	-
+		//- width doesn't change
+		const width = '577'
+		let height
+
+		switch (aspectRatio) {
+			case 'landscape':
+				height = '385'
+				break
+
+			case 'landscape-short':
+				height = '462'
+				break
+
+			case 'landscape-long':
+				height = '314'
+				break
+
+			case 'square':
+				height = '577'
+				break
+
+			case 'portrait':
+				height = '866'
+				break
+		}
+
 	div.image-container
 		img(
 			src= `images/${path}`
 			alt= path
 			loading="lazy"
 			id= path
-			onload=`onImageLoad('${path}')`
+			width= width
+			height= height
+			onload="(function(image){image.classList.add('fade-in');})(this)"
 		)
 		div.content-wrapper
 			p.image-title= title
 			p.location= location
+
+			//- style="display: block; opacity: 0;"
+			//- onload="(function(image){image.classList.add('fade-in');})(this)"

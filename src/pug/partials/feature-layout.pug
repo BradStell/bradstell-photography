@@ -19,7 +19,7 @@ html(lang="en-US")
     meta(name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2.0")
     meta(http-equiv="content-language" content="en")
     link(rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png")
-    link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="3portrait2" href="./images/favicon-3portrait2.png")
     link(rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png")
     //- link(rel="manifest" href="./site.webmanifest")
     style
@@ -30,8 +30,8 @@ html(lang="en-US")
         div.content
           div.header-container
             div.image-container
-              img.slider-image(src= `images/${topImgR}`)
-              img.slider-image(src= `images/${topImgL}`)
+              img.slider-image(src= `images/${topImgR}` width="999" height="666" onload="(function(image){image.classList.add('fade-in');})(this)")
+              img.slider-image(src= `images/${topImgL}` width="999" height="666" onload="(function(image){image.classList.add('fade-in');})(this)")
             include /partials/menu-button
 
           div.featured-info-section

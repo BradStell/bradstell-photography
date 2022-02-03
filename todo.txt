@@ -1,6 +1,7 @@
 ------- Pre - Deployement ------------------------------------------
-* add header to backend to tell clients to cache stuff
 * image load placeholders to prevent page jump
+* cleanup favicon vars
+	x add header to backend to tell clients to cache stuff
 	x don't track google analytics on local
 		- if (document.location.hostname.search("myproductiondomainname.com") !== -1) {
 	x make at least 1 feature page
@@ -15,3 +16,4 @@
 * add in set titles next to No. in menu
 * photo page should load content page without page load ( like the feature pages )
 
+7a851511c912b5db3d8f36abb1fbafd0-470fc55f61fc5e287e6b2f9997281bfb

@@ -9,7 +9,7 @@ block variables
 block content
 	div.home-image-and-menu-container
 		//- make array and pick random one
-		img.home-image(src="images/Mountains/bradley-stell-121.jpg")
+		img.home-image(src="images/Mountains/bradley-stell-121.jpg" width="1200" height="800" onload="(function(image){image.classList.add('fade-in');})(this)")
 		include /partials/menu-button
 	div.name-container
 		h1.title-name Brad Stell
@@ -19,8 +19,8 @@ block content
 			a.view-all-photos(href="set-001.html") VIEW ALL PHOTOS
 			div.view-all-photos-line
 	div.image-slider-container
-		img.slider-image(src="images/Sand/bradley-stell-125.jpg")
+		img.slider-image(src="images/Sand/bradley-stell-125.jpg" width="1200" height="800" onload="(function(image){image.classList.add('fade-in');})(this)")
 		//- img.slider-image(src="images/Ocean/bradley-stell-89.jpg")
-		img.slider-image(src="images/Trees/bradley-stell-11.jpg")
+		img.slider-image(src="images/Trees/bradley-stell-11.jpg" width="1200" height="800" onload="(function(image){image.classList.add('fade-in');})(this)")
 	include /partials/footer
 	+scroll_by_text('dark', ['death valley', 'new york'])
