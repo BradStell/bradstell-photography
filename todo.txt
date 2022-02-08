@@ -1,6 +1,10 @@
 ------- Pre - Deployement ------------------------------------------
 * image load placeholders to prevent page jump
+* create shell script using gsutil to upload new photos
 * ci-cd
+	- implemented shell script to automate it
+	- need to get ci tool to do on PR
+
 	x cleanup favicon vars
 	x add header to backend to tell clients to cache stuff
 	x don't track google analytics on local
