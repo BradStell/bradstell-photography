@@ -1,0 +1,28 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 012'
+	- const currentPage = "photography"
+	- const faviconNum = '-12'
+
+block content
+	div.grid.horizontal
+		+image_container('People/bradley-stell-76.jpg', 'No. 012.01', 'Monterey, CA', 'landscape')
+		+image_container('People/bradley-stell-127.jpg', 'No. 012.02', 'Mesquite Flat Sand Dunes, Death Valley, CA', 'landscape')
+
+		+image_container('People/bradley-stell-42.jpg', 'No. 012.03', 'Outer Banks, NC', 'landscape')
+		+image_container('People/bradley-stell-43.jpg', 'No. 012.04', 'Outer Banks, NC', 'landscape')
+
+		+image_container('People/bradley-stell-171.jpg', 'No. 012.05', 'Mesquite Flat Sand Dunes, Death Valley, CA', 'landscape')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('People/bradley-stell-29.jpg', 'No. 012.06', 'Death Valley, CA', 'portrait')
+		+image_container('People/bradley-stell-31.jpg', 'No. 012.07', 'Death Valley, CA', 'portrait')
+
+		+image_container('People/bradley-stell-18.jpg', 'No. 012.08', 'San Fransisco, CA', 'portrait')
+		+image_container('People/bradley-stell-39.jpg', 'No. 012.09', 'Austin, TX', 'portrait')
+
+		+image_container('People/bradley-stell-141.jpg', 'No. 012.10', 'Death Valley, CA', 'portrait')
+		+image_container('People/bradley-stell-7.jpg', 'No. 012.11', 'White Sands, NM', 'portrait')

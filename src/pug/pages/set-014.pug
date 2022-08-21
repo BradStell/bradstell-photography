@@ -1,0 +1,21 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 014'
+	- const currentPage = "photography"
+	- const faviconNum = '-14'
+
+block content
+	div.grid.horizontal
+		+image_container('Trees/bradley-stell-11.jpg', 'No. 014.01', 'Yosemite, CA', 'landscape')
+		+image_container('Trees/bradley-stell-40.jpg', 'No. 014.02', 'North Carolina', 'landscape')
+
+		+image_container('Trees/bradley-stell-111.jpg', 'No. 014.03', 'Oregon', 'landscape')
+		+image_container('Trees/bradley-stell-112.jpg', 'No. 014.04', 'Oregon', 'landscape')
+
+		+image_container('Trees/bradley-stell-115.jpg', 'No. 014.05', 'Oregon', 'landscape')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('Trees/bradley-stell-114.jpg', 'No. 014.06', 'Oregon', 'portrait')

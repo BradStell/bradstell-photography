@@ -1,0 +1,25 @@
+extends ../partials/set-layout
+
+block variables
+	- const setName = 'No. 013'
+	- const currentPage = "photography"
+	- const faviconNum = '-13'
+
+block content
+	div.grid.horizontal
+		+image_container('Cars/bradley-stell-72.jpg', 'No. 013.01', 'California', 'landscape')
+		+image_container('Cars/bradley-stell-73.jpg', 'No. 013.02', 'California', 'landscape')
+
+		+image_container('Cars/bradley-stell-105.jpg', 'No. 013.03', 'California', 'landscape')
+		+image_container('Cars/bradley-stell-104.jpg', 'No. 013.04', 'California', 'landscape')
+
+		+image_container('Cars/bradley-stell-108.jpg', 'No. 013.05', 'Oregon', 'landscape')
+		+image_container('Cars/bradley-stell-110.jpg', 'No. 013.06', 'Oregon', 'landscape')
+
+		+image_container('Cars/bradley-stell-75.jpg', 'No. 013.07', 'California', 'landscape')
+
+	div.divider
+
+	div.grid.horizontal
+		+image_container('Cars/bradley-stell-106.jpg', 'No. 013.08', 'Oregon', 'square')
+		+image_container('Cars/bradley-stell-107.jpg', 'No. 013.09', 'Oregon', 'square')
