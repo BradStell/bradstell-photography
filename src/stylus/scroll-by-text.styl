@@ -1,25 +1,65 @@
 div.scroll-by-text
   height 137px
-  // width 100%
-  width 300vw
+  width 600vw
   background-color transparent
   position absolute
   bottom 309px
   display flex
   flex-direction row
+  animation-duration 30s
 
   &.light
-    p
+    div
       color $color.black
 
   &.dark
-    p
+    div
       color $color.white
 
-  p
+  div.scroll-text
     font-weight 800
     font-size 100px
     line-height 137px
     letter-spacing 0.2em
     text-transform uppercase
     margin-right 200px
+
+    /* animation properties */
+    // animation-timing-function ease-in
+    transform translateX(20%)
+    -moz-transform translateX(20%)
+    -webkit-transform translateX(20%)
+    -moz-animation my-animation 50s linear infinite
+    -webkit-animation my-animation 50s linear infinite
+    animation my-animation 50s linear infinite
+
+/* for Firefox */
+@-moz-keyframes my-animation
+  // animation-timing-function ease-in
+
+  from
+    -moz-transform translateX(20%)
+  to
+    -moz-transform translateX(-100%)
+
+/* for Chrome */
+@-webkit-keyframes my-animation
+  // animation-timing-function ease-in
+
+  from
+    -webkit-transform translateX(20%)
+  to
+    -webkit-transform translateX(-100%)
+
+@keyframes my-animation
+  // animation-timing-function ease-in
+
+  from
+    transform translateX(20%)
+    -moz-transform translateX(20%)
+    -webkit-transform translateX(20%)
+
+  to
+    transform translateX(-100%)
+    -moz-transform translateX(-100%)
+    -webkit-transform translateX(-100%)

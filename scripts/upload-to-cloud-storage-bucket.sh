@@ -14,6 +14,6 @@ gsutil cp styles/*.css gs://bradleystell.com/styles
 gsutil cp js/*.js gs://bradleystell.com/js
 
 # upload all images
-gsutil cp images gs://bradleystell.com/images
+# gsutil cp images gs://bradleystell.com/images
 
 cd ..

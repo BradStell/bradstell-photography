@@ -67,7 +67,7 @@ div.main-container-wrapper
       div.image-slider-container
         display flex
         flex-direction row
-        overflow hidden
+        overflow-x auto
 
         img.slider-image
           width 1004px
@@ -77,6 +77,68 @@ div.main-container-wrapper
 
           &.fade-in
             opacity 1
+
+@media only screen and (max-width: $breakpoints.small_laptop)
+   div.main-container-wrapper
+    div.main-container
+      div.content
+        div.name-container
+          height 718px
+
+          h1.title-name
+            font-size 150px
+
+          div.title-content-container
+            width 450px
+
+            p.title-content
+              font-size 22px
+        
+          div.view-all-link-wrapper
+            a.view-all-photos
+              &:hover + div.view-all-photos-line
+                width 470px
+
+        div.image-slider-container
+          img.slider-image
+            height 500px
+
+        div.scroll-by-text
+          width 900vw
+
+          p
+            font-size 75px
+
+@media only screen and (max-width: $breakpoints.tablet)
+   div.main-container-wrapper
+    div.main-container
+      div.content
+        div.name-container
+          height 718px
+
+          h1.title-name
+            font-size 150px
+
+          div.title-content-container
+            width 450px
+
+            p.title-content
+              font-size 22px
+        
+          div.view-all-link-wrapper
+            a.view-all-photos
+              &:hover + div.view-all-photos-line
+                width 470px
+
+        div.image-slider-container
+          img.slider-image
+            height 500px
+
+        div.scroll-by-text
+          width 1000vw
+
+          p
+            font-size 75px
 
 @media only screen and (max-width: $breakpoints.home)
   div.main-container-wrapper
@@ -104,7 +166,7 @@ div.main-container-wrapper
             height 500px
 
         div.scroll-by-text
-          width 300vw
+          width 1000vw
 
           p
             font-size 75px
@@ -143,7 +205,8 @@ div.main-container-wrapper
             height 375px
 
         div.scroll-by-text
-          bottom 208px
+          // bottom 208px
+          bottom 1300vw
 
           p
             font-size 45px
